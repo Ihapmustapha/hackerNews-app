@@ -11,15 +11,15 @@ const Story = ({ id }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(storyData);
-  return (
+  return storyData && storyData.url ? (
     <>
       <a href={storyData.url}>
         <p>{storyData.title}</p>
       </a>
-      <span>by: {storyData.by}</span>
+      <p>By: {storyData.by}</p>
+      <p>Posted: {storyData.time}</p>
     </>
-  );
+  ) : null;
 };
 
 export default Story;
