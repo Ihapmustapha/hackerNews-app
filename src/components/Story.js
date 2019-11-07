@@ -7,6 +7,7 @@ import {
   StoryMetaElement,
   StoryAnchor
 } from "../styles/StoryStyle";
+import { mapTime } from "../mappers/mapTime";
 
 const Story = ({ id }) => {
   const [storyData, setStoryData] = useState({});
@@ -30,7 +31,7 @@ const Story = ({ id }) => {
         </span>
         <span className="story___time" data-testid="story-time">
           <StoryMetaElement color="#000"> Posted: </StoryMetaElement>{" "}
-          {storyData.time}
+          {mapTime(storyData.time)}
         </span>
       </StoryMeta>
     </StoryWrapper>
