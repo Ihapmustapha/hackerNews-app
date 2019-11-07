@@ -11,7 +11,14 @@ const StoriesContainer = () => {
       .catch(error => console.error(error));
   });
 
-  return storyIds.map(storyId => <Story id={storyId} key={`key-` + storyId} />);
+  return (
+    <>
+      <h1>Hacker News Stories</h1>
+      {storyIds.map(storyId => (
+        <Story id={storyId} key={`key-` + storyId} />
+      ))}
+    </>
+  );
 };
 
 export default StoriesContainer;
